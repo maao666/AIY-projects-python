@@ -15,7 +15,7 @@ while True:
     if button.is_pressed:
         start_time = time.time()
         while button.is_pressed:
-            sleep(0.2)
+            time.sleep(0.2)
             if( elapsed_time <= time.time() - start_time ):
                 print("Shutting down")
                 time.sleep(5)
