@@ -4,6 +4,7 @@ when pressed for a centern amount of time
 """
 import os
 import time
+from aiy.vision.leds import Leds
 from aiy.vision.leds import RgbLeds
 from gpiozero import Button
 from gpiozero import LED
