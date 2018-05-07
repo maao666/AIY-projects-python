@@ -16,7 +16,7 @@ while True:
         start_time = time.time()
         while button.is_pressed:
             sleep(0.2)
-            if( elapsed_time >= time.time() - start_time )
+            if( elapsed_time >= time.time() - start_time ):
                 print(Shutting down)
                 sleep(5)
                 os.system('shutdown now -h')
