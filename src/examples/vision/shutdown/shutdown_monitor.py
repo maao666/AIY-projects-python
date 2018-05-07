@@ -18,12 +18,11 @@ RED = (0xFF, 0x00, 0x00)
 
 def shutdown_confirmation():
     player = aiy.toneplayer.TonePlayer(22)
-    print('Breathe RED')
-    leds.pattern = Pattern.breathe(1000)
-    start_time_breathe = time.time()
-    leds.update(Leds.rgb_pattern(RED))
-    player.play('E5q','Be','C5e')
-    sleep(3)
+    #print('Breathe RED')
+    #leds.pattern = Pattern.breathe(1000)
+    #start_time_breathe = time.time()
+    #leds.update(Leds.rgb_pattern(RED))
+    player.play('E5q','Be','C5e','D5e','E5s','D5s','C5s','Be','Bs','Aq','Ae','C5e',)
     # leds.reset()
     os.system('sudo poweroff')
 
