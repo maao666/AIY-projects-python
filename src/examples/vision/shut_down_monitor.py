@@ -23,13 +23,13 @@ WHITE = (0xFF, 0xFF, 0xFF)
 def shutdown_confirmation():
     print('Breathe RED for 5 seconds')
     start_time_breathe = time.time()
-    leds.update(Leds.rgb_pattern(RED))
+    leds.update(Leds.rgb_on(RED))
     while button.is_pressed:
         if( 4 <= time.time() - start_time_breathe ):
                 print("Shutting down")
                 shutdown_confirmation()
     leds.reset()
-    os.system('shutdown now -h')
+    os.system('sudo poweroff')
 
 while True:
     if button.is_pressed:
