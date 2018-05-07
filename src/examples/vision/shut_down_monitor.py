@@ -20,5 +20,8 @@ while True:
                 print("Shutting down")
                 sleep(5)
                 os.system('shutdown now -h')
+            
+            print("Counting...")
     else:
         time.sleep(0.5)
+        print("Button is not being pressed")
