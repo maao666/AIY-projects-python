@@ -27,7 +27,6 @@ def shutdown_confirmation():
     while button.is_pressed:
         if( 4 <= time.time() - start_time_breathe ):
                 print("Shutting down")
-                shutdown_confirmation()
     leds.reset()
     os.system('sudo poweroff')
 
