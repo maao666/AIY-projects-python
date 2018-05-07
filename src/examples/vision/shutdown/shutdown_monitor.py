@@ -4,7 +4,9 @@ when pressed for a centern amount of time
 """
 import os
 import time
+import aiy.toneplayer
 from aiy.vision.leds import Leds
+from aiy.vision.leds import Pattern
 from aiy.vision.leds import RgbLeds
 from gpiozero import Button
 from gpiozero import LED
@@ -13,21 +15,16 @@ elapsed_time = 5
 button = Button(BUTTON_GPIO_PIN)
 leds = Leds()
 RED = (0xFF, 0x00, 0x00)
-GREEN = (0x00, 0xFF, 0x00)
-YELLOW = (0xFF, 0xFF, 0x00)
-BLUE = (0x00, 0x00, 0xFF)
-PURPLE = (0xFF, 0x00, 0xFF)
-CYAN = (0x00, 0xFF, 0xFF)
-WHITE = (0xFF, 0xFF, 0xFF)
 
 def shutdown_confirmation():
-    print('Breathe RED for 5 seconds')
+    player = aiy.toneplayer.TonePlayer(22)
+    print('Breathe RED')
+    leds.pattern = Pattern.breathe(1000)
     start_time_breathe = time.time()
-    leds.update(Leds.rgb_on(RED))
-    while button.is_pressed:
-        if( 4 <= time.time() - start_time_breathe ):
-                print("Shutting down")
-    leds.reset()
+    leds.update(Leds.rgb_pattern(RED))
+    player.play('E5q','Be','C5e')
+    sleep(3)
+    # leds.reset()
     os.system('sudo poweroff')
 
 while True:

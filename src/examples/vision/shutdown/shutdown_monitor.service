@@ -1,0 +1,11 @@
+[Unit]
+Description=AIY Shutdown Monitor
+
+[Service]
+Type=simple
+Restart=no
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/AIY-projects-python/src/examples/vision/shutdown/shutdown_monitor.py 
+
+[Install]
+WantedBy=multi-user.target
